@@ -10,7 +10,7 @@ const BreedsSelect = (props) => {
           console.log(props.selectedBreed)
         }}
       >
-        <option value="all">all</option>
+        <option value="">all</option>
         {props.breeds.map((breed) => {
           return (
             <option value={breed}>
