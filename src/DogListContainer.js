@@ -1,5 +1,6 @@
 // DO NOT DELETE
 import * as React from "react";
+import { BreedsSelect } from "./BreedsSelect";
 
 const DogListContainer = (props) => {
   const [breeds, setBreeds] = React.useState([])
@@ -16,8 +17,14 @@ const DogListContainer = (props) => {
       return (<li>{breed}</li>)
     });
   }
+  const [selectedBreed, setSelectedBreed] = React.useState("all")
   return (
     <div>
+      <BreedsSelect
+        breeds={breeds}
+        selectedBreed={selectedBreed}
+        setSelectedBreed={setSelectedBreed}
+      />
       {getBreedsList(breeds)}
     </div>
   )
