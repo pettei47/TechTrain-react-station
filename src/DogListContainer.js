@@ -19,6 +19,9 @@ const DogListContainer = (props) => {
   const [selectedBreed, setSelectedBreed] = React.useState("")
   const [selectedBreedImageList, setSelectedBreedImageList] = React.useState([])
   const getSelectedBreedImageList = (_selectedBreed) => {
+    if (_selectedBreed === "") {
+      return []
+    }
     fetch(`https://dog.ceo/api/breed/${_selectedBreed}/images`)
       .then((res) => res.json())
       .then((data) => {
@@ -38,7 +41,7 @@ const DogListContainer = (props) => {
         selectedBreed={selectedBreed}
         setSelectedBreed={setSelectedBreed}
       />
-      <button onClick={() => getSelectedBreedImageList(selectedBreed)}>表示</button>
+      <button onClick={() => getSelectedBreedImageList(selectedBreed)}>Show</button>
       {selectedBreedImageList}
       {/* getBreedsList(breeds) */}
     </div>
