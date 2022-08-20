@@ -2,15 +2,15 @@
 import * as React from "react";
 
 const BreedsSelect = (props) => {
+  const handleChange = async (e) => {
+    await props.setSelectedBreed(e.target.value)
+    console.log(props.selectedBreed)
+  }
   return (
     <div>
       <select
-        onChange={(e) => {
-          props.setSelectedBreed(e.target.value)
-          console.log(props.selectedBreed)
-        }}
+        onChange={(e) => handleChange(e)}
       >
-        <option value="">all</option>
         {props.breeds.map((breed) => {
           return (
             <option value={breed}>
