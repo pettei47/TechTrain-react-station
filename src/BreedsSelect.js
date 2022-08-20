@@ -11,7 +11,6 @@ const BreedsSelect = (props) => {
         onChange={(e) => handleChange(e)}
         value={props.selectedBreed}
       >
-        <option value="">all</option>
         {props.breeds.map((breed) => {
           return (
             <option value={breed}>
