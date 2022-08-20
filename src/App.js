@@ -10,23 +10,23 @@ import './App.css'
  */
 export const App = () => {
   const [dogUrl, setDogUrl] = React.useState("https://images.dog.ceo/breeds/redbone/n02090379_4138.jpg")
-  // const getDogUrl = async () => {
-  //   await axios.get("https://dog.ceo/api/breeds/image/random")
-  //     .then((response) => {
-  //       console.log(response.data.message)
-  //       setDogUrl(response.data.message)
-  //     })
-  // }
-  const getDogUrl = () => {
-    fetch("https://dog.ceo/api/breeds/image/random")
-      .then((res) => res.json())
-      .then(data => {
-        setDogUrl(data.message)
+  const getDogUrl = async () => {
+    await axios.get("https://dog.ceo/api/breeds/image/random")
+      .then((response) => {
+        console.log(response.data.message)
+        setDogUrl(response.data.message)
       })
   }
+  // const getDogUrl = () => {
+  //   fetch("https://dog.ceo/api/breeds/image/random")
+  //     .then((res) => res.json())
+  //     .then(data => {
+  //       setDogUrl(data.message)
+  //     })
+  // }
   return (
     <div>
-      <header><h1>DogApp</h1></header>
+      <header className='header'><h1>DogApp</h1></header>
       <main>
         <img src={dogUrl} />
       </main>
