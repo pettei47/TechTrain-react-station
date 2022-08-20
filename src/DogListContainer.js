@@ -18,6 +18,9 @@ const DogListContainer = (props) => {
     });
   }
   const [selectedBreed, setSelectedBreed] = React.useState("all")
+  React.useEffect(() => {
+    console.log(`test: ${selectedBreed}`)
+  }, [selectedBreed])
   return (
     <div>
       <BreedsSelect
