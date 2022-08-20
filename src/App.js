@@ -3,20 +3,14 @@
 import * as React from 'react'
 import axios from 'axios'
 import './App.css'
+import { Header } from './Header'
+import { Description } from './Description'
 
 /**
  * 
  * @type {React.FC}
  */
 export const App = () => {
-  const [dogUrl, setDogUrl] = React.useState("https://images.dog.ceo/breeds/redbone/n02090379_4138.jpg")
-  const getDogUrl = async () => {
-    await axios.get("https://dog.ceo/api/breeds/image/random")
-      .then((response) => {
-        console.log(response.data.message)
-        setDogUrl(response.data.message)
-      })
-  }
   // const getDogUrl = () => {
   //   fetch("https://dog.ceo/api/breeds/image/random")
   //     .then((res) => res.json())
@@ -26,14 +20,13 @@ export const App = () => {
   // }
   return (
     <div>
-      <header className='header'><h1>DogApp</h1></header>
+      <Header cssClass='header'/>
       <main>
-        <img src={dogUrl} />
+        <Description
+          description='かわいい犬を眺めましょう'
+          button='next dog'
+        />
       </main>
-      かわいい犬を眺めましょう
-      <div>
-        <button onClick={() => getDogUrl()}>next</button>
-      </div>
     </div>
   )
 }
