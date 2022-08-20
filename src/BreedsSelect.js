@@ -4,7 +4,6 @@ import * as React from "react";
 const BreedsSelect = (props) => {
   const handleChange = (e) => {
     props.setSelectedBreed(e.target.value)
-    console.log(props.selectedBreed)
   }
   return (
     <div>

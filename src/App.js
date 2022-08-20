@@ -24,7 +24,7 @@ export const App = () => {
       <main>
         <Description
           description='かわいい犬を眺めましょう'
-          button='next dog'
+          button='change top dog'
         />
       </main>
       <DogListContainer />
