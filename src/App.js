@@ -1,10 +1,10 @@
 // DO NOT DELETE
 
 import * as React from 'react'
-import axios from 'axios'
 import './App.css'
 import { Header } from './Header'
 import { Description } from './Description'
+import { DogListContainer } from './DogListContainer'
 
 /**
  * 
@@ -27,6 +27,7 @@ export const App = () => {
           button='next dog'
         />
       </main>
+      <DogListContainer />
     </div>
   )
 }
